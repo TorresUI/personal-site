@@ -64,3 +64,14 @@
     font-size: 2.5rem;
   }
 }
+
+.journey {
+  padding: 4rem 0;
+}
+
+.journeyTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 3rem;
+}

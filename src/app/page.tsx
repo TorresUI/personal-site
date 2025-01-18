@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import Image from "next/image";
+import Timeline from "@/components/Timeline";
 
 export default function Home() {
   return (
@@ -32,6 +33,11 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className={styles.journey}>
+        <h2 className={styles.journeyTitle}>My Journey</h2>
+        <Timeline />
       </section>
     </div>
   );
