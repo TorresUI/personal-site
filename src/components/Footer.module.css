@@ -1,0 +1,35 @@
+.footer {
+  width: 100%;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  margin-top: auto;
+}
+
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.copyright {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.social {
+  display: flex;
+  gap: 2rem;
+}
+
+.social a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.social a:hover {
+  color: #666;
+}
