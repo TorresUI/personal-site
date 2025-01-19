@@ -34,6 +34,24 @@ const timelineData: TimelineItem[] = [
         "Drove significant improvements in application performance and user experience while mentoring team members.",
     },
   },
+  {
+    date: "2021 - 2023",
+    title: "Frontend Developer",
+    company: "Previous Company",
+    description:
+      "Specialized in building responsive web applications and improving user experience.",
+    details: {
+      role: "Frontend Developer",
+      technologies: ["React", "JavaScript", "CSS", "Redux", "Next.js"],
+      achievements: [
+        "Rebuilt company's main dashboard interface",
+        "Reduced load time by 60%",
+        "Implemented new design system",
+      ],
+      impact:
+        "Modernized the company's frontend architecture and significantly improved user satisfaction scores.",
+    },
+  },
   // Add more items with details...
 ];
 

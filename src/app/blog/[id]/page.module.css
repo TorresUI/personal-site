@@ -1,0 +1,72 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.backButton {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.backButton:hover {
+  opacity: 1;
+}
+
+.post {
+  margin-top: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: white;
+  margin: 0 0 1rem 0;
+}
+
+.date {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 2rem 0;
+}
+
+.content {
+  color: #ccc;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.content p {
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .backButton {
+    left: 1rem;
+    top: 1rem;
+  }
+
+  .post {
+    margin-top: 4rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .content {
+    font-size: 1rem;
+  }
+}

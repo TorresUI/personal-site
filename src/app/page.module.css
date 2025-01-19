@@ -1,16 +1,52 @@
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+}
+
+/* Landing Section */
+.landing {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
 }
 
-.hero {
+.welcome {
+  text-align: left;
+  max-width: 900px;
+}
+
+.welcomeTitle {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.welcomeSubtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+/* About Section */
+.about {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.heroContent {
   display: flex;
   align-items: center;
   gap: 4rem;
-  min-height: calc(
-    100vh - 200px
-  ); /* Adjust based on your header/footer height */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .imageWrapper {
@@ -27,15 +63,9 @@
 }
 
 .title {
-  font-size: 3rem;
-  margin: 0;
+  font-size: 2.5rem;
   color: white;
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  color: #666;
-  margin: 0.5rem 0 2rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
 .bio {
@@ -44,13 +74,51 @@
   line-height: 1.6;
 }
 
-.bio p {
-  margin-bottom: 1rem;
+/* Timeline Section */
+.timelineSection {
+  padding: 4rem 0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Responsive design */
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .welcomeTitle {
+    font-size: 3.5rem;
+  }
+
+  .heroContent {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .hero {
+  .landing {
+    min-height: 60vh;
+    padding: 1rem;
+  }
+
+  .welcome {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .welcomeTitle {
+    font-size: 2.5rem;
+  }
+
+  .welcomeSubtitle {
+    font-size: 1.125rem;
+  }
+
+  .about {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .heroContent {
     flex-direction: column;
     text-align: center;
     gap: 2rem;
@@ -61,17 +129,29 @@
   }
 
   .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .bio {
+    font-size: 1rem;
+  }
+
+  .timelineSection {
+    padding: 2rem 1rem;
   }
 }
 
-.journey {
-  padding: 4rem 0;
-}
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+  .welcomeTitle {
+    font-size: 2rem;
+  }
 
-.journeyTitle {
-  text-align: center;
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 3rem;
+  .welcomeSubtitle {
+    font-size: 1rem;
+  }
+
+  .imageWrapper {
+    width: 200px;
+  }
 }
