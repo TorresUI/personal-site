@@ -1,23 +1,44 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./Header.module.css";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
-    <header className={styles.header}>
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.link}>
-          Home
+    <nav className={styles.nav}>
+      <div className={styles.navContent}>
+        <Link
+          href="/"
+          className={`${styles.workLink} ${
+            pathname === "/" ? styles.active : ""
+          }`}
+        >
+          About <span className={styles.slash}></span>
         </Link>
-        <Link href="/projects" className={styles.link}>
-          Projects
-        </Link>
-        <Link href="/blog" className={styles.link}>
-          Blog
-        </Link>
-        <Link href="/contact" className={styles.link}>
-          Contact
-        </Link>
-      </nav>
-    </header>
+        <div className={styles.navLinks}>
+          <Link
+            href="/projects"
+            className={pathname === "/projects" ? styles.active : ""}
+          >
+            Projects
+          </Link>
+          <Link
+            href="/blog"
+            className={pathname === "/blog" ? styles.active : ""}
+          >
+            Blog
+          </Link>
+          <Link
+            href="/contact"
+            className={pathname === "/contact" ? styles.active : ""}
+          >
+            Contact
+          </Link>
+        </div>
+      </div>
+    </nav>
   );
 }
