@@ -12,9 +12,10 @@ export default function Home() {
             className={styles.sparkle}
             style={{
               top: "20%",
-              right: "35%",
-              fontSize: "3rem",
+              right: "25%",
+              fontSize: "5rem",
               opacity: "0.8",
+              color: "white",
             }}
           >
             ✦
@@ -22,18 +23,19 @@ export default function Home() {
           <div
             className={styles.sparkle}
             style={{
-              bottom: "40%",
-              left: "30%",
-              fontSize: "3rem",
+              bottom: "20%",
+              left: "25%",
+              fontSize: "5rem",
               opacity: "0.8",
+              color: "white",
             }}
           >
             ✦
           </div>
 
           <h1 className="hero-title">
-            Hi. I'm Brandon.
-            <br />A Developer.
+            Hey! I'm Brandon.
+            <br />A Software Engineer.
           </h1>
 
           <p className="subtitle">
@@ -79,22 +81,35 @@ export default function Home() {
 
         {/* Timeline Section */}
         <section className={styles.timelineSection}>
+          <div className={styles.timelineTitleWrapper}>
+            <div
+              className={styles.sparkle}
+              style={{
+                top: "-70%",
+                right: "15%",
+                fontSize: "5rem",
+                opacity: "0.8",
+                color: "white",
+              }}
+            >
+              ✦
+            </div>
+            <div
+              className={styles.sparkle}
+              style={{
+                bottom: "-70%",
+                left: "10%",
+                fontSize: "5rem",
+                opacity: "0.8",
+                color: "white",
+              }}
+            >
+              ✦
+            </div>
+            <h2 className={styles.timelineTitle}>My Story</h2>
+          </div>
           <Timeline />
         </section>
-
-        <div className={styles.aboutSection}>
-          <h2 className={styles.aboutTitle}>
-            Let's collaborate if you're committed to sustainability, education,
-            equality, or carbon neutrality.
-          </h2>
-
-          <p className={styles.aboutText}>
-            I believe we should leave this Earth as good as or better than we
-            found it for future generations; my goal is to contribute to those
-            ideals in whatever way I can. If you feel the same, I'd love to
-            talk.
-          </p>
-        </div>
       </section>
     </>
   );

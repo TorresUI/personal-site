@@ -35,9 +35,10 @@
   position: relative;
   min-height: 80vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   padding: 2rem;
+  gap: 4rem;
 }
 
 .heroContent {
@@ -45,33 +46,43 @@
   align-items: flex-start;
   gap: 4rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
   padding-top: 2rem;
 }
 
 .imageWrapper {
   flex-shrink: 0;
+  width: 400px;
+  height: 400px;
+  position: relative;
 }
 
 .profileImage {
   border-radius: 15px;
   object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .content {
   flex: 1;
+  padding-top: 0;
+  align-self: center;
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: var(--color-primary);
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 2rem 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .bio {
   color: var(--color-secondary);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.6;
+  max-width: 800px;
 }
 
 /* Timeline Section */
@@ -79,6 +90,28 @@
   padding: 4rem 0;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.timelineTitleWrapper {
+  position: relative;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.timelineTitle {
+  font-size: 7rem;
+  line-height: 1.1;
+  color: var(--color-primary);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.timelineTitleWrapper .sparkle {
+  position: absolute;
+  z-index: 1;
 }
 
 .heroSection {
@@ -146,6 +179,7 @@
   .about {
     min-height: auto;
     padding: 2rem 1rem;
+    align-items: flex-start;
   }
 
   .heroContent {
@@ -155,15 +189,20 @@
   }
 
   .imageWrapper {
-    width: 250px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .content {
+    padding-top: 0;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .bio {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .timelineSection {
@@ -172,6 +211,11 @@
 
   .container {
     padding: 1rem;
+  }
+
+  .timelineTitle {
+    font-size: 4rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -190,39 +234,9 @@
   }
 }
 
-.aboutSection {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
-
-.aboutTitle {
-  font-size: 4.5rem;
-  line-height: 1.1;
-  margin-bottom: 2.5rem;
-  color: var(--color-primary);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
+/* Remove these classes as they're no longer needed */
+.aboutSection,
+.aboutTitle,
 .aboutText {
-  font-size: 1.5rem;
-  line-height: 1.5;
-  color: var(--color-secondary);
-  opacity: 0.9;
-  max-width: 900px;
-}
-
-@media (max-width: 768px) {
-  .aboutSection {
-    padding: 2rem 1rem;
-  }
-
-  .aboutTitle {
-    font-size: 2.5rem;
-  }
-
-  .aboutText {
-    font-size: 1.25rem;
-  }
+  display: none; /* Or just delete these classes entirely */
 }

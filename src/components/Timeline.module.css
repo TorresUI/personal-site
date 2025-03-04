@@ -1,77 +1,195 @@
 .timelineContainer {
-  width: 100%;
-  overflow-x: auto;
+  position: relative;
   padding: 2rem 0;
 }
 
 .timeline {
   position: relative;
-  display: flex;
-  min-width: min-content;
-  padding: 20px 0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  height: 2px;
-  background: #666;
-  left: 0;
-  right: 0;
-  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: var(--color-primary);
+  opacity: 0.3;
 }
 
 .timelineItem {
   position: relative;
-  padding: 0 2rem;
-  min-width: 300px;
+  padding: 2rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.timelineItem::before {
-  content: "";
+.timelinePoint {
   position: absolute;
-  width: 16px;
-  height: 16px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: white;
-  border: 2px solid #666;
-  top: 42px;
+  width: 24px;
+  height: 24px;
+  background: rgba(143, 255, 216, 0.1);
+  border: 2px solid var(--color-primary);
   border-radius: 50%;
-  z-index: 1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timelinePoint::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.timelineItem:hover .timelinePoint {
+  transform: translateX(-50%) scale(1.2);
+  box-shadow: 0 0 20px var(--color-primary);
+  background: rgba(143, 255, 216, 0.2);
+}
+
+.timelineItem.active .timelinePoint {
+  transform: translateX(-50%) scale(1.3);
+  box-shadow: 0 0 30px var(--color-primary);
+  background: rgba(143, 255, 216, 0.3);
 }
 
 .timelineContent {
-  background-color: rgba(255, 255, 255, 0.05);
+  width: 45%;
+  margin-left: auto;
   padding: 1.5rem;
-  border-radius: 8px;
-  margin-top: 2rem;
-  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.timelineContent:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(143, 255, 216, 0.2);
+  transform: translateY(-2px);
+}
+
+.timelineItem.active .timelineContent {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(143, 255, 216, 0.3);
+}
+
+.timelineItem:nth-child(odd) .timelineContent {
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .timelineDate {
-  color: #666;
-  font-weight: bold;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
-.timelineContent h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: white;
-}
-
-.timelineContent h4 {
+.timelineTitle {
+  color: var(--color-secondary);
+  font-size: 1.5rem;
   margin: 0.5rem 0;
-  color: #666;
-  font-weight: normal;
 }
 
-.timelineContent p {
-  margin: 0.5rem 0 0;
-  color: #ccc;
+.timelineCompany {
+  color: var(--color-primary);
+  opacity: 0.8;
+  font-size: 1.1rem;
+  margin: 0.25rem 0;
+}
+
+.timelineDescription {
+  color: var(--color-secondary);
+  opacity: 0.9;
   line-height: 1.6;
+}
+
+.timelineDetails {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detailsSection {
+  margin-bottom: 1.5rem;
+}
+
+.detailsSection h4 {
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: rgba(143, 255, 216, 0.1);
+  color: var(--color-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
   font-size: 0.9rem;
+}
+
+/* Remove the general hover tooltip */
+.timelinePoint::after {
+  content: "Click to expand";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Only show tooltip on the first item when it has the showHint class */
+.timelineItem.showHint:hover .timelinePoint::after {
+  opacity: 0.7;
+}
+
+/* Hide tooltip for all other items */
+.timelineItem:not(.showHint):hover .timelinePoint::after {
+  opacity: 0;
+}
+
+/* Update mobile styles */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 2rem;
+  }
+
+  .timelinePoint {
+    left: 2rem;
+  }
+
+  .timelineContent {
+    width: calc(100% - 5rem);
+    margin-left: 3.5rem;
+  }
+
+  .timelineItem:nth-child(odd) .timelineContent {
+    margin-left: 3.5rem;
+    margin-right: 0;
+  }
 }
 
 /* Add smooth scrolling for the timeline */
@@ -88,26 +206,6 @@
 .timelineContainer {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-.timelinePoint {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  border: 2px solid #666;
-  top: 38px;
-  border-radius: 50%;
-  z-index: 1;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.timelinePoint:hover {
-  background-color: #666;
-  transform: translateX(-50%) scale(1.2);
 }
 
 .modalOverlay {
@@ -161,51 +259,6 @@
   line-height: 1;
 }
 
-.detailsSection {
-  margin-top: 1.5rem;
-}
-
-.detailsSection h4 {
-  color: #666;
-  margin: 1.5rem 0 0.5rem;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
-}
-
-.tag {
-  background-color: #333;
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.9rem;
-}
-
-.detailsSection ul {
-  margin: 0.5rem 0;
-  padding-left: 1.5rem;
-}
-
-.detailsSection li {
-  margin: 0.5rem 0;
-  color: #ccc;
-}
-
-.modalContent h2 {
-  color: white;
-  margin: 0;
-}
-
-.modalContent h3 {
-  color: #666;
-  margin: 0.5rem 0 1rem;
-  font-weight: normal;
-}
-
 .drawer {
   position: fixed;
   top: 0;
@@ -229,67 +282,8 @@
   overflow-y: auto;
 }
 
-.closeButton {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  line-height: 1;
-  z-index: 1001;
-}
-
 .closeButton:hover {
   color: #666;
-}
-
-.detailsSection {
-  margin-top: 1.5rem;
-}
-
-.detailsSection h4 {
-  color: #666;
-  margin: 1.5rem 0 0.5rem;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
-}
-
-.tag {
-  background-color: #333;
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.9rem;
-}
-
-.detailsSection ul {
-  margin: 0.5rem 0;
-  padding-left: 1.5rem;
-}
-
-.detailsSection li {
-  margin: 0.5rem 0;
-  color: #ccc;
-}
-
-.drawerContent h2 {
-  color: white;
-  margin: 0;
-}
-
-.drawerContent h3 {
-  color: #666;
-  margin: 0.5rem 0 1rem;
-  font-weight: normal;
 }
 
 /* Add responsive styles for mobile */

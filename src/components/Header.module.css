@@ -21,6 +21,9 @@
   align-items: center;
   font-size: 1rem;
   text-rendering: geometricPrecision;
+  font-family: "SF Pro Rounded", ui-rounded, "SF Pro Display", system-ui,
+    -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
 }
 
 .workLink {
@@ -32,6 +35,7 @@
   padding: 0.4rem 0.8rem;
   border-radius: 1.2rem;
   letter-spacing: 0;
+  font-weight: 500;
 }
 
 .workLink.active {
@@ -54,7 +58,7 @@
   padding: 0.4rem 0.8rem;
   border-radius: 1.2rem;
   letter-spacing: 0;
-  font-weight: 150;
+  font-weight: 500;
 }
 
 .navLinks a:not(.active) {

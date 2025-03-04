@@ -31,12 +31,6 @@ export default function Header() {
           >
             Blog
           </Link>
-          <Link
-            href="/contact"
-            className={pathname === "/contact" ? styles.active : ""}
-          >
-            Contact
-          </Link>
         </div>
       </div>
     </nav>

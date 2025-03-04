@@ -29,6 +29,13 @@
     hsla(158, 23%, 18%, 0.987) 90.5%,
     hsl(158, 23%, 18%) 100%
   );
+  --hero-gradient: linear-gradient(
+    -45deg,
+    hsl(158, 23%, 18%) 0%,
+    hsl(158, 23%, 22%) 25%,
+    hsl(158, 25%, 20%) 50%,
+    hsl(158, 23%, 18%) 100%
+  );
 }
 
 body {
@@ -36,7 +43,9 @@ body {
   padding: 0;
   min-height: 100vh;
   color: var(--color-secondary);
-  background: var(--background-color);
+  background: var(--hero-gradient);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui,
     sans-serif;
   font-feature-settings: "ss01" on, "ss02" on, "ss03" on;
@@ -95,7 +104,6 @@ h3 {
 }
 
 .hero-section {
-  background: var(--color-gradient);
   min-height: 100vh;
   position: relative;
   width: 100%;
@@ -103,7 +111,6 @@ h3 {
 }
 
 .content-section {
-  background: hsl(158, 23%, 18%);
   position: relative;
   z-index: 1;
 }
