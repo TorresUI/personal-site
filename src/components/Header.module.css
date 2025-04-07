@@ -13,7 +13,8 @@
 }
 
 .navContent {
-  background: rgb(35, 56, 49);
+  background: rgba(49, 140, 120, 0.45);
+  backdrop-filter: blur(8px);
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
   display: flex;

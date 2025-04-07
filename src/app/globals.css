@@ -5,37 +5,7 @@
 :root {
   --color-primary: rgb(143, 255, 216);
   --color-secondary: rgb(212, 237, 228);
-  --background-color: hsl(158, 23%, 18%);
-  --background-start: #3a6a39;
-  --background-end: #2d5229;
-  --gradient-start: #233831;
-  --gradient-end: #1a2a25;
-  --color-gradient: linear-gradient(
-    180deg,
-    transparent 0%,
-    hsla(158, 23%, 18%, 0.013) 9.7%,
-    hsla(158, 23%, 18%, 0.049) 18.1%,
-    hsla(158, 23%, 18%, 0.104) 25.5%,
-    hsla(158, 23%, 18%, 0.175) 31.9%,
-    hsla(158, 23%, 18%, 0.259) 37.7%,
-    hsla(158, 23%, 18%, 0.352) 43%,
-    hsla(158, 23%, 18%, 0.45) 47.9%,
-    hsla(158, 23%, 18%, 0.55) 52.8%,
-    hsla(158, 23%, 18%, 0.648) 57.7%,
-    hsla(158, 23%, 18%, 0.741) 63%,
-    hsla(158, 23%, 18%, 0.825) 68.7%,
-    hsla(158, 23%, 18%, 0.896) 75%,
-    hsla(158, 23%, 18%, 0.951) 82.2%,
-    hsla(158, 23%, 18%, 0.987) 90.5%,
-    hsl(158, 23%, 18%) 100%
-  );
-  --hero-gradient: linear-gradient(
-    -45deg,
-    hsl(158, 23%, 18%) 0%,
-    hsl(158, 23%, 22%) 25%,
-    hsl(158, 25%, 20%) 50%,
-    hsl(158, 23%, 18%) 100%
-  );
+  --color-gradient: linear-gradient(135deg, #bd7f2e 0%, #30AA30 48%, #1f6959 100%);
 }
 
 body {
@@ -43,7 +13,7 @@ body {
   padding: 0;
   min-height: 100vh;
   color: var(--color-secondary);
-  background: var(--hero-gradient);
+  background: var(--color-gradient);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui,
@@ -90,17 +60,6 @@ h3 {
   color: var(--color-secondary);
   font-weight: 400;
   opacity: 0.9;
-}
-
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 4.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.25rem;
-    margin: 2rem auto;
-  }
 }
 
 .hero-section {
