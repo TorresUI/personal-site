@@ -14,7 +14,7 @@ export default function Header() {
   ];
 
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.navContainer}>
         <div className={styles.navLinks}>
           {navItems.map(({ href, label }) => (
             <Link
