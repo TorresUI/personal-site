@@ -1,92 +1,31 @@
-.header {
-  padding: 1.5rem 2rem;
-  display: flex;
-  justify-content: center;
-}
-
 .nav {
   position: fixed;
   top: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
-}
-
-.navContent {
   background: rgba(49, 140, 120, 0.45);
   backdrop-filter: blur(8px);
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  font-size: 1rem;
-  text-rendering: geometricPrecision;
-  font-family: "SF Pro Rounded", ui-rounded, "SF Pro Display", system-ui,
-    -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 500;
-}
 
-.workLink {
-  color: #ffffff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 1.2rem;
-  letter-spacing: 0;
-  font-weight: 500;
-}
-
-.workLink.active {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.slash {
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .navLinks {
   display: flex;
   gap: 1.5rem;
+  font-family: "SF Pro Rounded", ui-rounded, "SF Pro Display", system-ui,
+  -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .navLinks a {
   color: #ffffff;
   text-decoration: none;
-  transition: background-color 0.2s ease;
   padding: 0.4rem 0.8rem;
   border-radius: 1.2rem;
-  letter-spacing: 0;
-  font-weight: 500;
 }
 
-.navLinks a:not(.active) {
-  opacity: 0.9;
-}
-
-.navLinks a.active,
-.workLink.active {
+.navLinks a.active, .navLinks a:hover {
   background: rgba(255, 255, 255, 0.1);
   opacity: 1;
-}
-
-.navLinks a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  opacity: 1;
-}
-
-@media (max-width: 768px) {
-  .header {
-    padding: 1rem;
-  }
-
-  .nav {
-    gap: 1rem;
-  }
-
-  .navItem {
-    font-size: 0.9rem;
-  }
 }

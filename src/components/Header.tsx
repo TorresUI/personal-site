@@ -7,32 +7,25 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const pathname = usePathname();
 
+  const navItems = [
+    { href: "/", label: "About" },
+    { href: "/projects", label: "Projects" },
+    { href: "/blog", label: "Blog" },
+  ];
+
   return (
     <nav className={styles.nav}>
-      <div className={styles.navContent}>
-        <Link
-          href="/"
-          className={`${styles.workLink} ${
-            pathname === "/" ? styles.active : ""
-          }`}
-        >
-          About <span className={styles.slash}></span>
-        </Link>
         <div className={styles.navLinks}>
-          <Link
-            href="/projects"
-            className={pathname === "/projects" ? styles.active : ""}
-          >
-            Projects
-          </Link>
-          <Link
-            href="/blog"
-            className={pathname === "/blog" ? styles.active : ""}
-          >
-            Blog
-          </Link>
+          {navItems.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={pathname === href ? styles.active : ""}
+            >
+              {label}
+            </Link>
+          ))}
         </div>
-      </div>
     </nav>
   );
 }
